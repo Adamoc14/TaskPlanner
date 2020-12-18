@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:clickable="true"
-        android:contentDescription="@string/todo"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:borderWidth="1dp"

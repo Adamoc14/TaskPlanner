@@ -18,7 +18,7 @@ import DB.DB;
 import Models.Task;
 
 public class ViewSingleTask extends AppCompatActivity {
-    TextView txtViewTitle , txtViewDescription , txtViewDate, txtViewPriority;
+    TextView txtViewTitle , txtViewDescription , txtViewDate, txtViewPriority , txtViewSingleDueDate;
     Button btnUpdate;
     ImageButton btnDelete;
     FloatingActionButton btnClose;
@@ -42,7 +42,8 @@ public class ViewSingleTask extends AppCompatActivity {
             txtViewTitle.setText(foundTask.getTitle());
             txtViewPriority.setText(String.valueOf(foundTask.getPriority()));
             txtViewDescription.setText(foundTask.getDescription());
-            txtViewDate.setText(foundTask.getDate());
+            txtViewDate.setText("Created at: " + foundTask.getDate());
+            txtViewSingleDueDate.setText("Due Date: " + foundTask.getdueDate());
 
             // Brings the app to update page to update the respective task
             btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +87,7 @@ public class ViewSingleTask extends AppCompatActivity {
         txtViewDate = (TextView) findViewById(R.id.txtViewSingleDate);
         txtViewDescription = (TextView) findViewById(R.id.txtViewSingleDescription);
         txtViewPriority = (TextView) findViewById(R.id.txtViewSinglePriorityTag);
+        txtViewSingleDueDate = (TextView) findViewById(R.id.txtViewSingleDueDate);
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
         btnClose = (FloatingActionButton) findViewById(R.id.btnClose);
         btnDelete = (ImageButton) findViewById(R.id.btnDelete);

@@ -13,6 +13,7 @@ public class Task {
     //  Property and Method Declarations - making them private to use encapsulation
     private int priority;
     private String date_created;
+    private String due_date;
     private StatusType statusType;
     private String title , description;
     private int id;
@@ -20,15 +21,14 @@ public class Task {
 
     // Constructor Declarations
     public Task(){}
-    public Task(int priority, String title , String description , String date_created){
+    public Task(int priority, String title , String description , String date_created, String due_date){
         this.priority = priority;
         this.title = title;
         this.description = description;
         this.date_created = date_created;
+        this.due_date = due_date;
         this.statusType  = StatusType.ToDo;
     }
-
-
 
     // Getter and Setters Function Definitions for all my Task properties
     public int getId() {
@@ -77,5 +77,13 @@ public class Task {
 
     public void setStatus(StatusType statusType) {
         this.statusType = statusType;
+    }
+
+    public String getdueDate() {
+        return due_date;
+    }
+
+    public void setdueDate(String due_date) {
+        this.due_date = due_date;
     }
 }

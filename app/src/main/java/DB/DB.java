@@ -37,9 +37,10 @@ public class DB extends SQLiteOpenHelper{
         put("Col_4" , "Description");
         put("Col_5" , "Date_Created");
         put("Col_6" , "Status");
+        put("Col_7" , "Due_Date");
     }};
     private static final HashMap<String,String> db_commands = new HashMap<String, String>(){{
-        put("Create_Cmd" , "CREATE TABLE IF NOT EXISTS " + db_data.get("Table_Name") + "(ID INTEGER PRIMARY KEY AUTOINCREMENT , Priority INTEGER, Title Text, Description Text , Date_Created Text , Status Text)" );
+        put("Create_Cmd" , "CREATE TABLE IF NOT EXISTS " + db_data.get("Table_Name") + "(ID INTEGER PRIMARY KEY AUTOINCREMENT , Priority INTEGER, Title Text, Description Text , Date_Created Text , Status Text , Due_Date Text)" );
         put("Drop_Cmd" , "DROP TABLE IF EXISTS" + db_data.get("Table_Name"));
     }};
     public List<Task> tasks = new ArrayList<Task>();
@@ -73,6 +74,7 @@ public class DB extends SQLiteOpenHelper{
         values.put(db_data.get("Col_4"), task.getDescription());
         values.put(db_data.get("Col_5"), task.getDate());
         values.put(db_data.get("Col_6") , String.valueOf(task.getStatus()));
+        values.put(db_data.get("Col_7") , task.getdueDate());
         return values;
     }
 
@@ -93,6 +95,7 @@ public class DB extends SQLiteOpenHelper{
                     task.setDescription(cursor.getString(cursor.getColumnIndex(db_data.get("Col_4"))));
                     task.setDate(cursor.getString(cursor.getColumnIndex(db_data.get("Col_5"))));
                     task.setStatus(Enum.valueOf(Task.StatusType.class , cursor.getString(cursor.getColumnIndex(db_data.get("Col_6")))));
+                    task.setdueDate(cursor.getString(cursor.getColumnIndex(db_data.get("Col_7"))));
                     tasks.add(task);
                 }
             }
@@ -116,7 +119,8 @@ public class DB extends SQLiteOpenHelper{
                         cursor.getInt(1),
                         cursor.getString(2),
                         cursor.getString(3),
-                        cursor.getString(4)
+                        cursor.getString(4),
+                        cursor.getString(6)
                 );
                 foundTask.setId(cursor.getInt(cursor.getColumnIndex(db_data.get("Col_1"))));
                 foundTask.setStatus(Enum.valueOf(Task.StatusType.class, cursor.getString(cursor.getColumnIndex(db_data.get("Col_6")))));

@@ -56,8 +56,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         // Sets the background of the tag based on priority level
         holder.priority_tag.setBackgroundResource(checkTagColours(task.getPriority()));
         holder.priority_tag.setText(String.valueOf(task.getPriority()));
-        holder.date.setText(task.getDate().toString());
+        holder.date.setText("Created At:\n " + task.getDate());
         holder.description.setText(task.getDescription());
+        holder.due_date.setText("Due Date: " + task.getdueDate());
+        holder.due_date.setTextSize(10);
 
         holder.tasksContainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +102,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     // We then Add these Template ViewHolders to the actual RecyclerView
     public class TaskViewHolder extends RecyclerView.ViewHolder{
         // Variable Declarations and Function Definitions
-        public TextView title , description, date , priority_tag;
+        public TextView title , description, date , priority_tag , due_date;
         public ConstraintLayout tasksContainer;
 
         public TaskViewHolder(@NonNull View itemView) {
@@ -114,6 +116,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             description = (TextView) itemView.findViewById(R.id.txtViewDescription);
             date = (TextView) itemView.findViewById(R.id.txtViewDate);
             priority_tag = (TextView) itemView.findViewById(R.id.txtViewPriorityTag);
+            due_date = (TextView) itemView.findViewById(R.id.txtViewDueDate);
         }
 
     }
