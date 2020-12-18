@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListPlanner">
-        <activity android:name=".UpdateSingleTask"></activity>
+        <activity android:name=".MissedTasks"></activity>
+        <activity android:name=".UpdateSingleTask" />
         <activity android:name=".ViewSingleTask" />
         <activity android:name=".SplashActivity">
             <intent-filter>
