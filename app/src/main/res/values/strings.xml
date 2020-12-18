@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">ListPlanner</string>
+    <string name="to_do_list_header" translatable="false">To Do List</string>
+    <string name="task_tag" translatable="false">1</string>
+    <string name="task_date_info" translatable="false">13/12/14</string>
+    <string name="todo">TODO</string>
+    <string name="description">Description:</string>
+    <string name="priority">Priority:</string>
+    <string name="title">Title:</string>
+    <string name="update_task">UPDATE TASK</string>
+    <string name="update">Update</string>
+    <string name="Add_Task_title">ADD NEW TASK</string>
+    <string-array name="priority_list">
+        <item>Please Select a Priority</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
