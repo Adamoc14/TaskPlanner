@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="home_icon"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24" />
+    <item android:id="missed_tasks_icon"
+        android:title="Missed Tasks"
+        android:icon="@drawable/ic_calendar_icon" />
+
+</menu>
