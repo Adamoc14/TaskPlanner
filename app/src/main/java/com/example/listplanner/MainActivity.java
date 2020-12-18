@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public List<Task> tasks = new ArrayList<>();
     public RecyclerView recyclerView;
     public FloatingActionButton btnAddNewTask;
+    public BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void mainScreenInit(){
       recyclerView = (RecyclerView) findViewById(R.id.rycViewTask);
+      bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
       btnAddNewTask = (FloatingActionButton) findViewById(R.id.btnAddNewTask);
+      bottomNavigationView.setItemIconTintList(null);
+      bottomNavigationView.setItemIconSize(170);
       taskAdapter = new TaskAdapter(MainActivity.this , tasks);
       // Layout the recycler view as desired
       structureLayout();

@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="home_icon"
-        android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24" />
-    <item android:id="missed_tasks_icon"
-        android:title="Missed Tasks"
-        android:icon="@drawable/ic_calendar_icon" />
+    <item
+        android:id="@+id/home_icon"
+        android:icon="@drawable/ic_house_icon"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:enabled="false"
+        android:title=""/>
+
+    <item
+        android:id="@+id/missed_tasks"
+        android:icon="@drawable/ic_calendar_icon"
+        android:title="@string/missed_tasks"
+        />
+
+
 
 </menu>
