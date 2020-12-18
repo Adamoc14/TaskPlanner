@@ -22,6 +22,7 @@
     <string name="enter_your_decsription_here">Enter your decsription here...</string>
     <string name="close">Close</string>
     <string name="enter_a_title_here">Enter a title here...</string>
+    <string name="delete">Delete</string>
     <string-array name="priority_list">
         <item>Please Select a Priority</item>
         <item>1</item>
